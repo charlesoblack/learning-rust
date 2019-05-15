@@ -4,6 +4,12 @@ struct Rectangle {
     height: u32,
 }
 
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+}
+
 fn main() {
     let rect1 = Rectangle {
                     width: 30,
@@ -11,15 +17,11 @@ fn main() {
                 };
 
     println!("The are of the rectangle is {} square pixels.",
-        area(&rect1)
+        rect1.area()
     );
 
     println!("rect1 is {:#?}",rect1);
 
     // the following is allowed because we used an immutable reference above
     // println!("{}",rect1.width)
-}
-
-fn area(rectangle: &Rectangle) -> u32 {
-    rectangle.width * rectangle.height
 }
