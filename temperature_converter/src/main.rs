@@ -13,9 +13,7 @@ fn main() {
     let direction = match direction.trim().parse() {
         Ok(1) => true,
         Ok(2) => false,
-        _ => {
-            panic!("Could not understand direction!");
-        },
+        _ => panic!("Could not understand direction!")
     };
 
     println!("How many degrees?");
@@ -27,7 +25,7 @@ fn main() {
 
     let value = match value.trim().parse() {
         Ok(num) => num,
-        Err(_) => panic!("Could not parse value!"),
+        Err(_) => panic!("Could not parse value!")
     };
 
     let converted_value = convert(direction,value);
